@@ -24,55 +24,50 @@
 // console.log("La division de " + number1 +" y "+ number2 + " es " + division(number1,number2));
 
 //Crea 2 inputs numericos(A y B)
-var a = () => parseInt(document.getElementById('input-a').value);
-var b = () => parseInt(document.getElementById('input-b').value);
 
+var getNumber = (inputId) => parseInt(document.getElementById(inputId).value);
+// var b = () => parseInt(document.getElementById('input-b').value);
 
-var sum = (a,b) => a() + b();
-var subtration = (a,b) => a() - b();
-var multiplication = (a,b) => a() * b();
-var division = (a,b) => a() / b();
+var sum = () => getNumber("input-a") + getNumber("input-b"); //modificado
+var subtration = (a,b) => getNumber("input-a") - getNumber("input-b");
+var multiplication = (a,b) => getNumber("input-a") * getNumber("input-b");
+var division = (a,b) => getNumber("input-a") / getNumber("input-b");
 
+function setResult(result){
+    document.getElementById("result").innerText = result;
+}
 
 document.getElementById("sum").addEventListener("click", function () {
-    var result = sum(a,b);
-    if (isNaN(result)) {
-        console.log("1")
-        document.getElementById("result").innerHTML = "Error"
+    if (isNaN(getNumber("input-a")) || isNaN(getNumber("input-b"))) {
+        setResult("Error") //Modificado
     } else {
-        document.getElementById("result").innerText = result;
-        console.log("2")
+        var result = sum();
+       setResult(result);
     }
 })
 document.getElementById("subtration").addEventListener("click", function () {
-    var result = subtration(a,b);
-    if (isNaN(result)) {
-        console.log("1")
-        document.getElementById("result").innerHTML = "Error"
+    if (isNaN(getNumber("input-a")) || isNaN(getNumber("input-b"))) {
+        setResult("Error") //Modificado
     } else {
-        document.getElementById("result").innerText = result;
-        console.log("2")
+        var result = subtration();
+       setResult(result);
     }
 })
 
 document.getElementById("multiplication").addEventListener("click", function () {
-    var result = multiplication(a,b);
-    if (isNaN(result)) {
-        console.log("1")
-        document.getElementById("result").innerHTML = "Error"
+    if (isNaN(getNumber("input-a")) || isNaN(getNumber("input-b"))) {
+        setResult("Error") //Modificado
     } else {
-        document.getElementById("result").innerText = result;
-        console.log("2")
+        var result = multiplication();
+       setResult(result);
     }
 })
 
 document.getElementById("division").addEventListener("click", function () {
-    var result = division(a,b);
-    if (isNaN(result)) {
-        console.log("1")
-        document.getElementById("result").innerHTML = "Error"
+    if (isNaN(getNumber("input-a")) || isNaN(getNumber("input-b"))) {
+        setResult("Error") //Modificado
     } else {
-        document.getElementById("result").innerText = result;
-        console.log("2")
+        var result = division();
+       setResult(result);
     }
 })

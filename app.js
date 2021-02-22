@@ -76,11 +76,3 @@ document.getElementById("division").addEventListener("click", function () {
         console.log("2")
     }
 })
-
-
-//     document.getElementById("result").innerHTML = suma;
-//     document.getElementById("sum").addEventListener("click",sum);
-// }
-
-
-

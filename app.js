@@ -29,9 +29,9 @@ var getNumber = (inputId) => parseInt(document.getElementById(inputId).value);
 // var b = () => parseInt(document.getElementById('input-b').value);
 
 var sum = () => getNumber("input-a") + getNumber("input-b"); //modificado
-var subtration = (a,b) => getNumber("input-a") - getNumber("input-b");
-var multiplication = (a,b) => getNumber("input-a") * getNumber("input-b");
-var division = (a,b) => getNumber("input-a") / getNumber("input-b");
+var subtration = () => getNumber("input-a") - getNumber("input-b");
+var multiplication = () => getNumber("input-a") * getNumber("input-b");
+var division = () => getNumber("input-a") / getNumber("input-b");
 
 function setResult(result){
     document.getElementById("result").innerText = result;
